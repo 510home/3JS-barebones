@@ -6,10 +6,10 @@ import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.150/examples/js
 
 // create a scene
 const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x1c5d38);
-  scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
+ // scene.background = new THREE.Color(0x1c5d38);
+ // scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
 //create a camera
-const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
@@ -23,8 +23,8 @@ let danhead;
 // instantiate OrbitControls
 let controls;
 
-// state which object t orendfer 
-let objToRender = 'danhead';
+// state which object to render
+let objToRender = 'head';
 
 const headLoader = new GLTFLoader();
 
@@ -55,9 +55,9 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, 1);
  scene.add(topLight);
 
  function animate() {
-  requestAnimationFrame(animate);
+  requestAnimationFrame(animate)
  
-if (object && objectToRender === 'danhead') {
+if (object && objectToRender === 'head') {
     // values are based on tutorial's approximation
     danhead.rotation.y = -3 + mousex / window.innerWidth * 3;
     danhead.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
