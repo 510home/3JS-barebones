@@ -18,7 +18,7 @@ let mouseX = window.innerwidth / 2;
 let mouseY = window.innerHeight / 2;
 
 // object as a global variable
-let danhead;
+let object;
 
 // instantiate OrbitControls
 let controls;
@@ -32,9 +32,9 @@ const headLoader = new GLTFLoader();
 headLoader.load(
   'https://raw.githubusercontent.com/510home/3JS-barebones/main/meshes/lancer_green_scaled.glb',
   (gltf) => {
-    danhead = gltf.scene;
-    danhead.scale.set(0.2, 0.2, 0.2);
-    scene.add(danhead);
+    object = gltf.scene;
+    object.scale.set(0.2, 0.2, 0.2);
+    scene.add(object);
   },
 
 );
@@ -59,8 +59,8 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, 1);
  
 if (object && objectToRender === 'head') {
     // values are based on tutorial's approximation
-    danhead.rotation.y = -3 + mousex / window.innerWidth * 3;
-    danhead.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
+    object.rotation.y = -3 + mousex / window.innerWidth * 3;
+    object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
 }
 renderer.render(scene, camera);
  }
