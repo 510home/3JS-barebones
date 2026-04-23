@@ -24,13 +24,13 @@ let object;
 //let controls;
 
  //state which object to render
-let objToRender = 'head';
+const objToRender = 'head';
 
 const headLoader = new GLTFLoader();
 
 // load the gltf model using the gltf loader library
 headLoader.load(
-  '../../meshes/daniel-head.glb',
+  `../../meshes/${objToRender}/daniel-head.glb`,
   (gltf) => {
     object = gltf.scene;
     object.scale.set(0.2, 0.2, 0.2);
