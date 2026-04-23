@@ -60,9 +60,10 @@ if (object && objectToRender === 'danhead') {
     // values are based on tutorial's approximation
     danhead.rotation.y = -3 + mousex / window.innerWidth * 3;
     danhead.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
-
-renderer.render(scene, camera);
 }
+renderer.render(scene, camera);
+ }
+
 
 // event listener watches for window changes in order to resize and rerender the window
 window.addEventListener('resize', function () {
