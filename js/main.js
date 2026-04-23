@@ -30,7 +30,7 @@ const headLoader = new GLTFLoader();
 
 // load the gltf model using the gltf loader library
 headLoader.load(
-  `./meshes/${objToRender}daniel-head.glb`,
+  'https://raw.githubusercontent.com/510home/3JS-barebones/main/meshes/daniel-head.glb',
   (gltf) => {
     danhead = gltf.scene;
     scene.add(danhead);
