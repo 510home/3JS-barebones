@@ -6,6 +6,8 @@ import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/
 
 // create a scene
 const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x1c5d38);
+  scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
 //create a camera
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
 // create a renderer
@@ -28,7 +30,7 @@ const headLoader = new GLTFLoader();
 
 // load the gltf model using the gltf loader library
 headLoader.load(
-  `meshes/${objToRender}daniel-head.glb`,
+  `./meshes/${objToRender}daniel-head.glb`,
   (gltf) => {
     danhead = gltf.scene;
     scene.add(danhead);
