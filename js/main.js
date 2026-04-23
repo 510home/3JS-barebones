@@ -23,8 +23,8 @@ let object;
 // instantiate OrbitControls
 //let controls;
 
-// state which object to render
-//let objToRender = 'head';
+ //state which object to render
+let objToRender = 'head';
 
 const headLoader = new GLTFLoader();
 
@@ -57,13 +57,13 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, 1);
  function animate() {
   requestAnimationFrame(animate)
  
-  /*
+ 
 if (object && objectToRender === 'head') {
     // values are based on tutorial's approximation
     object.rotation.y = -3 + mousex / window.innerWidth * 3;
     object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
 }
-    */
+    
 renderer.render(scene, camera);
  }
 
@@ -74,12 +74,12 @@ window.addEventListener('resize', function () {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
-/*
+
 // add mouse/cursor position listener
 document.onmousemove = (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 }
-*/
+
 // start rendering the scene
 animate ();
