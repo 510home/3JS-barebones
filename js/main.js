@@ -6,25 +6,25 @@ import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.150/examples/js
 
 // create a scene
 const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x1c5d38);
-  scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
+ // scene.background = new THREE.Color(0x1c5d38);
+ // scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
 //create a camera
-const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
-// follow the cursor'sposition
-let mouseX = window.innerwidth / 2;
+// follow the cursor's position
+let mouseX = window.innerWidth / 2;
 let mouseY = window.innerHeight / 2;
 
 // object as a global variable
-let danhead;
+let object;
 
 // instantiate OrbitControls
 let controls;
 
-// state which object t orendfer 
-let objToRender = 'danhead';
+// state which object to render
+//let objToRender = 'head';
 
 const headLoader = new GLTFLoader();
 
@@ -32,9 +32,9 @@ const headLoader = new GLTFLoader();
 headLoader.load(
   'https://raw.githubusercontent.com/510home/3JS-barebones/main/meshes/lancer_green_scaled.glb',
   (gltf) => {
-    danhead = gltf.scene;
-    danhead.scale.set(0.2, 0.2, 0.2);
-    scene.add(danhead);
+    object = gltf.scene;
+    object.scale.set(0.2, 0.2, 0.2);
+    scene.add(object);
   },
 
 );
@@ -44,7 +44,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 // camera position
-camera.position.set(0, 0, 8);
+camera.position.set(0, 0, 5);
 
 // sdd light to the scene
 const ambientLight = new THREE.AmbientLight(0xdf8842, 1);
@@ -55,13 +55,15 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, 1);
  scene.add(topLight);
 
  function animate() {
-  requestAnimationFrame(animate);
+  requestAnimationFrame(animate)
  
-if (object && objectToRender === 'danhead') {
+  /*
+if (object && objectToRender === 'head') {
     // values are based on tutorial's approximation
-    danhead.rotation.y = -3 + mousex / window.innerWidth * 3;
-    danhead.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
+    object.rotation.y = -3 + mousex / window.innerWidth * 3;
+    object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
 }
+    */
 renderer.render(scene, camera);
  }
 
@@ -72,12 +74,12 @@ window.addEventListener('resize', function () {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
-
-// add mouse/cursor positoin listenre
+/*
+// add mouse/cursor position listener
 document.onmousemove = (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 }
-
+*/
 // start rendering the scene
 animate ();
