@@ -1,7 +1,7 @@
 // import libraries
 
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.150/build/three.module.js';
-import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.150/examples/jsm/controls/OrbitControls.js";
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js";
+//import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.150/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.150/examples/jsm/loaders/GLTFLoader.js";
 
 // create a scene
@@ -21,7 +21,7 @@ let mouseY = window.innerHeight / 2;
 let object;
 
 // instantiate OrbitControls
-let controls;
+//let controls;
 
 // state which object to render
 //let objToRender = 'head';
@@ -30,7 +30,7 @@ const headLoader = new GLTFLoader();
 
 // load the gltf model using the gltf loader library
 headLoader.load(
-  'https://raw.githubusercontent.com/510home/3JS-barebones/main/meshes/lancer_green_scaled.glb',
+  '../../meshes/daniel-head.glb',
   (gltf) => {
     object = gltf.scene;
     object.scale.set(0.2, 0.2, 0.2);
