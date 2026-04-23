@@ -11,7 +11,7 @@ const scene = new THREE.Scene();
 //create a camera
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
 // create a renderer
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer( { alpha: true });
 
 // follow the cursor'sposition
 let mouseX = window.innerwidth / 2;
@@ -34,11 +34,9 @@ headLoader.load(
   (gltf) => {
     danhead = gltf.scene;
     scene.add(danhead);
-  }
-);
+  },
 
-// instantiate adn set size of renderere
-const renderer = new THREE.WebGLRenderer( { alpha: true } ); // alpha: true allows transparent background behind model.
+);
 
 // add renderer to the Document Object Model (DOM)
 renderer.setSize(window.innerWidth, window.innerHeight);
