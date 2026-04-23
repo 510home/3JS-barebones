@@ -1,8 +1,8 @@
 // import libraries
 
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.176/build/three.module.js";
-//import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.150/examples/jsm/controls/OrbitControls.js";
-import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.176/examples/jsm/loaders/GLTFLoader.js";
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // create a scene
 const scene = new THREE.Scene();
