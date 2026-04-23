@@ -30,9 +30,10 @@ const headLoader = new GLTFLoader();
 
 // load the gltf model using the gltf loader library
 headLoader.load(
-  'https://raw.githubusercontent.com/510home/3JS-barebones/main/meshes/daniel-head.glb',
+  'https://raw.githubusercontent.com/510home/3JS-barebones/main/meshes/lancer_green_scaled.glb',
   (gltf) => {
     danhead = gltf.scene;
+    danhead.scale.set(0.2, 0.2, 0.2);
     scene.add(danhead);
   },
 
@@ -43,13 +44,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 // camera position
-camera.position.set(0, 0, 5);
+camera.position.set(0, 0, 8);
 
 // sdd light to the scene
-const ambientLight = new THREE.AmbientLight(0xdf8842, 0.35);
+const ambientLight = new THREE.AmbientLight(0xdf8842, 1);
  scene.add(ambientLight);
 
- const topLight = new THREE.DirectionalLight(0xffffff, 0.76);
+ const topLight = new THREE.DirectionalLight(0xffff88, 1);
  topLight.position.set(0, 1, 0);
  scene.add(topLight);
 
