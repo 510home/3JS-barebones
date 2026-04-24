@@ -18,10 +18,16 @@ const mouseX = window.innerWidth / 2;
 const mouseY = window.innerHeight / 2;
 
 // object as a global variable
-let object = 'head';
+//let object = 'head';
 
 // instantiate OrbitControls
-//let controls;
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.screenSpacePanning = false;
+controls.minDistance = .35;
+controls.maxDistance = 200;
+
 
  //state which object to render
 // let objToRender = 'head';
