@@ -27,7 +27,7 @@ const headLoader = new GLTFLoader();
 headLoader.load(
   'https://raw.githubusercontent.com/510home/3JS-barebones/main/meshes/daniel-head.glb',
   (gltf) => {
-    const object = gltf.scene;
+    object = gltf.scene;
     object.scale.set(0.25, 0.25, 0.25);
     scene.add(object);
   },
@@ -44,7 +44,7 @@ camera.position.set(0, 0, 2);
 const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
  scene.add(ambientLight);
 
- const topLight = new THREE.DirectionalLight(0x88ffff, 3);
+ const topLight = new THREE.DirectionalLight(0xffffff, 3.5);
  topLight.position.set(0, 1, 0);
  scene.add(topLight);
 
