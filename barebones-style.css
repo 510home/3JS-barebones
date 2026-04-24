@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #0f1a13;
-    background: linear-gradient(hsl(168, 100%, 13%), #0f1a13);
+    background-image: linear-gradient(hsl(168, 100%, 13%), #0f1a13);
 }
 
 header {
