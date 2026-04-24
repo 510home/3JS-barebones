@@ -18,19 +18,19 @@ let mouseX = window.innerWidth / 2;
 let mouseY = window.innerHeight / 2;
 
 // object as a global variable
-let object;
+let object = 'head';
 
 // instantiate OrbitControls
 //let controls;
 
  //state which object to render
-const objToRender = 'head';
+// let objToRender = 'head';
 
 const headLoader = new GLTFLoader();
 
-// load the gltf model using the gltf loader library
+// GLTF LOADER ------- the gltf model using the gltf loader library
 headLoader.load(
-  `../../meshes/${objToRender}/daniel-head.glb`,
+  `../../meshes/daniel-head.glb`,
   (gltf) => {
     object = gltf.scene;
     object.scale.set(0.2, 0.2, 0.2);
@@ -44,13 +44,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 // camera position
-camera.position.set(0, 0, 5);
+camera.position.set(0, 0, 2);
 
 // sdd light to the scene
-const ambientLight = new THREE.AmbientLight(0xdf8842, 1);
+const ambientLight = new THREE.AmbientLight(0xdf8842, .45);
  scene.add(ambientLight);
 
- const topLight = new THREE.DirectionalLight(0xffff88, 1);
+ const topLight = new THREE.DirectionalLight(0x88ffff, 2);
  topLight.position.set(0, 1, 0);
  scene.add(topLight);
 
@@ -58,7 +58,7 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, 1);
   requestAnimationFrame(animate)
  
  
-if (object && objectToRender === 'head') {
+if (object === 'head') {
     // values are based on tutorial's approximation
     object.rotation.y = -3 + mousex / window.innerWidth * 3;
     object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
