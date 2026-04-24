@@ -14,8 +14,8 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
 // follow the cursor's position
-var mouseX = window.innerWidth / 2;
-var mouseY = window.innerHeight / 2;
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
 
 // object as a global variable
 let object = 'head';
@@ -58,8 +58,8 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
   requestAnimationFrame(animate)
  
     // values are based on tutorial's approximation
-    object.rotation.y = -3 + mousex / window.innerWidth * 3;
-    object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
+ //   object.rotation.y = -3 + mousex / window.innerWidth * 3;
+ //   object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
     
 renderer.render(scene, camera);
  }
