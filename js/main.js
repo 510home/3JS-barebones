@@ -30,7 +30,7 @@ const headLoader = new GLTFLoader();
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
 headLoader.load(
-  `../../meshes/daniel-head.glb`,
+  'https://raw.githubusercontent.com/510home/3JS-barebones/main/meshes/daniel-head.glb',
   (gltf) => {
     object = gltf.scene;
     object.scale.set(0.2, 0.2, 0.2);
