@@ -14,8 +14,8 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
 // follow the cursor's position
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
+const mouseX = window.innerWidth / 2;
+const mouseY = window.innerHeight / 2;
 
 // object as a global variable
 let object = 'head';
@@ -44,7 +44,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 // camera position
-camera.position.set(0, 0, 1.8);
+camera.position.set(0, 0, 1.6);
 
 // sdd light to the scene
 const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
@@ -56,10 +56,9 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
 
  function animate() {
   requestAnimationFrame(animate)
- 
-    // values are based on tutorial's approximation
- //   object.rotation.y = -3 + mousex / window.innerWidth * 3;
- //   object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
+  // values are based on tutorial's approximation
+    object.rotation.y = -3 + mousex / window.innerWidth * 3;
+    object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
     
 renderer.render(scene, camera);
  }
