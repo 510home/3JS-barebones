@@ -27,7 +27,7 @@ const headLoader = new GLTFLoader();
 headLoader.load(
   'https://raw.githubusercontent.com/510home/3JS-barebones/main/meshes/daniel-head.glb',
   (gltf) => {
-    object = gltf.scene;
+    const object = gltf.scene;
     object.scale.set(0.25, 0.25, 0.25);
     scene.add(object);
   },
