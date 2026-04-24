@@ -57,12 +57,9 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, .45);
  function animate() {
   requestAnimationFrame(animate)
  
- 
-if (object === 'head') {
     // values are based on tutorial's approximation
     object.rotation.y = -3 + mousex / window.innerWidth * 3;
     object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
-}
     
 renderer.render(scene, camera);
  }
