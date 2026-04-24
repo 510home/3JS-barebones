@@ -44,7 +44,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 // camera position
-camera.position.set(0, 0, 1);
+camera.position.set(0, 0, 1.5);
 
 // sdd light to the scene
 const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
