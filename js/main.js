@@ -42,7 +42,6 @@ headLoader.load(
     object.scale.set(0.25, 0.25, 0.25);
     scene.add(object);
   },
-
 );
 
 // add renderer to the Document Object Model (DOM)
@@ -50,9 +49,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 // camera position
-camera.position.set(0, 0, 1.6);
+camera.position.set(0, 0, 1.7);
 
-// sdd light to the scene
+// add light to the scene
 const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
  scene.add(ambientLight);
 
@@ -62,10 +61,7 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
 
  function animate() {
   requestAnimationFrame(animate)
-  // values are based on tutorial's approximation
-   // object.rotation.y = -3 + mousex / window.innerWidth * 3;
-   // object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
-    
+ 
 renderer.render(scene, camera);
  }
 
