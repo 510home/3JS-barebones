@@ -44,7 +44,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 // camera position
-camera.position.set(0, 0, 1.5);
+camera.position.set(0, 0, 1.8);
 
 // sdd light to the scene
 const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
@@ -63,7 +63,6 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
     
 renderer.render(scene, camera);
  }
-
 
 // event listener watches for window changes in order to resize and rerender the window
 window.addEventListener('resize', function () {
