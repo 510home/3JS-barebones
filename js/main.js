@@ -14,8 +14,8 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
 // follow the cursor's position
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
+var mouseX = window.innerWidth / 2;
+var mouseY = window.innerHeight / 2;
 
 // object as a global variable
 let object = 'head';
@@ -44,13 +44,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 // camera position
-camera.position.set(0, 0, 2);
+camera.position.set(0, 0, 1);
 
 // sdd light to the scene
-const ambientLight = new THREE.AmbientLight(0xdf8842, .45);
+const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
  scene.add(ambientLight);
 
- const topLight = new THREE.DirectionalLight(0x88ffff, 2);
+ const topLight = new THREE.DirectionalLight(0x88ffff, 3);
  topLight.position.set(0, 1, 0);
  scene.add(topLight);
 
