@@ -77,10 +77,10 @@ window.addEventListener('resize', function () {
 });
 
 // add mouse/cursor position listener
-document.onmousemove = (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-}
+//document.onmousemove = (e) => {
+ // mouseX = e.clientX;
+ // mouseY = e.clientY;
+//}
 
 // start rendering the scene
 animate ();
